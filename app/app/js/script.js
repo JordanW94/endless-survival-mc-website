@@ -24,8 +24,10 @@ function copyText(text){
   }
   
   var btn = document.getElementById('copyButton');
+  const ServerIPValue = Config['server-ip'];
+  console.log(ServerIPValue)
   btn.addEventListener('click', function(){
-    copyText(Config['server-ip']);
+    copyText(ServerIPValue.toString());
     btn.innerHTML = "Copied!";
   })
   
@@ -38,5 +40,5 @@ function copyText(text){
   }
   
   function mouseOut() {
-      document.getElementById("copyButton").innerHTML = "YOUR IP HERE";
+      document.getElementById("copyButton").innerHTML = Config['server-ip'];
   }
