@@ -1,6 +1,8 @@
+import {default as Config} from './Config.js';
+
 console.log("TemplateServer");
 
-import {default as Config} from './Config.js';
+const ServerIPValue = Config['server-ip'];
 
 function copyText(text){
     function selectElementText(element) {
@@ -24,8 +26,6 @@ function copyText(text){
   }
   
   var btn = document.getElementById('copyButton');
-  const ServerIPValue = Config['server-ip'];
-  console.log(ServerIPValue)
   btn.addEventListener('click', function(){
     copyText(ServerIPValue.toString());
     btn.innerHTML = "Copied!";
