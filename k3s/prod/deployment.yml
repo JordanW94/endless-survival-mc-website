@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jmcreative
+  annotations:
+      keel.sh/policy: force
+      keel.sh/match-tag: 'true'
+      keel.sh/pollSchedule: '@every 1m'
+      keel.sh/trigger: poll
+spec:
+  selector:
+    matchLabels:
+      app: jmcreative
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: jmcreative
+    spec:
+      containers:
+        - name: jmcreative
+          image: jwhitbread/jmcreative:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+            
+          livenessProbe:
+            exec:
+              command:
+              - curl
+              - --fail
+              - https://jmcreative.me/health_check
+            initialDelaySeconds: 10
+            timeoutSeconds: 30
+            failureThreshold: 1
+            successThreshold: 1

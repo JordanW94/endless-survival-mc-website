@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: endlesssurvival-dev
+  annotations:
+      keel.sh/policy: force
+      keel.sh/match-tag: 'true'
+      keel.sh/pollSchedule: '@every 1m'
+      keel.sh/trigger: poll
+spec:
+  selector:
+    matchLabels:
+      app: endlesssurvival-dev
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: endlesssurvival-dev
+    spec:
+      containers:
+        - name: endlesssurvival-dev
+          image: jwhitbread/endlesssurvival:dev
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+            
+          livenessProbe:
+            exec:
+              command:
+              - curl
+              - --fail
+              - https://dev.endlesssurvival.uk/health_check
+            initialDelaySeconds: 10
+            timeoutSeconds: 30
+            failureThreshold: 1
+            successThreshold: 1

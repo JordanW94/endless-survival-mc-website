@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: endlesssurvival-dev
+spec:
+  selector:
+    app: endlesssurvival-dev
+  ports:
+    - port: 4100
+      targetPort: 80
+  type: LoadBalancer
