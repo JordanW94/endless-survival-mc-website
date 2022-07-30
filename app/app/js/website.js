@@ -32,7 +32,7 @@ ServerStatus(Config['server-ip']).getData(server => {
 		  getStatus = (s) => s.replace(/{online}/g, IsOnline ? server.players.online : 0).replace(/{max}/g, IsOnline ? server.players.max : 0)
 
 
-	StatusPlayersText.innerHTML = PlayerValue;
+	// StatusPlayersText.innerHTML = PlayerValue;
 	
     StatusButtonText.innerHTML = getStatus(ButtonValue);
 
