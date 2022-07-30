@@ -5,6 +5,7 @@ const create = (s) => document.createElement(s),
 
 import {default as Config} from './Config.js';
 
+console.log("js called")
 
 // SET STATUS BUTTON
 const StatusButton = select('.server-status-players');
@@ -38,24 +39,3 @@ ServerStatus(Config['server-ip']).getData(server => {
 
 });
 
-// ADD CLIPBOARD
-
-StatusButton.addEventListener('click', function() {
-	var L = StatusPlayersText.innerHTML;
-	var Text = create('input');
-	Text.value = Config['server-ip'];
-
-
-	select('body').appendChild(Text);
-
-	Text.select();
-	document.execCommand('copy');
-
-	StatusPlayersText.innerHTML = StatusConfig['copy-value'];
-
-	Text.remove();
-
-	setTimeout(() => StatusPlayersText.innerHTML = L, 3 * 1000);
-
-
-});
