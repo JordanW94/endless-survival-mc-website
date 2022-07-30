@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jmcreative
+  name: endlesssurvival
   annotations:
       keel.sh/policy: force
       keel.sh/match-tag: 'true'
@@ -11,16 +11,16 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: jmcreative
+      app: endlesssurvival
   replicas: 3
   template:
     metadata:
       labels:
-        app: jmcreative
+        app: endlesssurvival
     spec:
       containers:
-        - name: jmcreative
-          image: jwhitbread/jmcreative:latest
+        - name: endlesssurvival
+          image: jwhitbread/endlesssurvival:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -30,7 +30,7 @@ spec:
               command:
               - curl
               - --fail
-              - https://jmcreative.me/health_check
+              - https://endlesssurvival.uk/health_check
             initialDelaySeconds: 10
             timeoutSeconds: 30
             failureThreshold: 1

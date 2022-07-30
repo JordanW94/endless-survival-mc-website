@@ -25,13 +25,13 @@ spec:
           ports:
             - containerPort: 80
             
-          # livenessProbe:
-          #   exec:
-          #     command:
-          #     - curl
-          #     - --fail
-          #     - https://dev.endlesssurvival.uk/health_check
-          #   initialDelaySeconds: 10
-          #   timeoutSeconds: 30
-          #   failureThreshold: 1
-          #   successThreshold: 1
+          livenessProbe:
+            exec:
+              command:
+              - curl
+              - --fail
+              - https://dev.endlesssurvival.uk/health_check
+            initialDelaySeconds: 10
+            timeoutSeconds: 30
+            failureThreshold: 1
+            successThreshold: 1
