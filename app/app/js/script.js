@@ -11,9 +11,6 @@ const ServerIPValue = Config['server-ip'];
 
 // SET STATUS BUTTON
 const StatusButton = select('.server-status-players');
-//const StatusButtonicon = select('.server-status-checker img');
-const StatusButtonText = select('.server-status-checker span');
-const StatusPlayersText = select('.server-status-players span');
 const StatusConfig = Config['server-status'];
 
 
@@ -53,24 +50,20 @@ function copyText(text){
   }
   
   function mouseOut() {
-      document.getElementById("copyButton").innerHTML = Config['server-ip'] + "<div class='server-status-checker'><img src=''><span>0 / 0  Checking status...</span></div>";
+      document.getElementById("copyButton").innerHTML = Config['server-ip'] + "<div class='server-status-checker'><img src=''><span></span></div>";
 
       console.log("js called")
-
-      StatusButtonText.style.color = (StatusConfig['text-color'] == undefined) ? 'black' : StatusConfig['text-color'];
 
       // CHECK SERVER STATUS 
       ServerStatus(Config['server-ip']).getData(server => {
 
+        var StatusButtonText = select('.server-status-checker span');
         var IsOnline = server.online;
         
-        const PlayerValue = Config['server-ip'];
+        StatusButtonText.style.color = (StatusConfig['text-color'] == undefined) ? 'white' : StatusConfig['text-color'];
 
         const ButtonValue = StatusConfig['value'],
             getStatus = (s) => s.replace(/{online}/g, IsOnline ? server.players.online : 0).replace(/{max}/g, IsOnline ? server.players.max : 0)
-
-
-        // StatusPlayersText.innerHTML = PlayerValue;
         
           StatusButtonText.innerHTML = getStatus(ButtonValue);
 

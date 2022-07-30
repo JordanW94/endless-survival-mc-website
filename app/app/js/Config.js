@@ -7,13 +7,18 @@ const Config = {
 
 'server-status': {
 	'background-color': '#fff659',
-	'text-color': 'black',
+	'text-color': 'white',
 	'icon': 'assets/logo.ico',
-
-	'value': '{online} / {max} players connected!',
+	'value': '{online} / {max} players online!',
 	'copy-value': 'IP COPIED!'
 },
 
+'server-staff': [
+	{"player-name":"Hoviis",
+	"rank": "Owner"},
+	{"player-name":"Pohnut",
+	"rank": "Admin"}
+],
 
 'background': {
 	'type': 'image', // TYPES: IMAGE OR COLOR

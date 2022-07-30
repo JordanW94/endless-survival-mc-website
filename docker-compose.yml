@@ -1,6 +1,6 @@
 version: "3"
 services:
-  httpstatuses:
+  endlesssurvival:
     user: root
     build: .
     container_name: local-endlesssurvival

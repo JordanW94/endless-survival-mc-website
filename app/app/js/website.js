@@ -9,21 +9,15 @@ console.log("js called")
 
 // SET STATUS BUTTON
 const StatusButton = select('.server-status-players');
-//const StatusButtonicon = select('.server-status-checker img');
-const StatusButtonText = select('.server-status-checker span');
 const StatusPlayersText = select('.server-status-players span');
 const StatusConfig = Config['server-status'];
 
 
-//StatusButtonicon.src = StatusConfig['icon'];
-
-
-
-//StatusButton.style.background = (StatusConfig['background-color'] == undefined) ? '#fff659' : StatusConfig['background-color'];
-StatusButtonText.style.color = (StatusConfig['text-color'] == undefined) ? 'black' : StatusConfig['text-color'];
-
 // CHECK SERVER STATUS 
 ServerStatus(Config['server-ip']).getData(server => {
+
+	var StatusButtonText = select('.server-status-checker span');
+	StatusButtonText.style.color = (StatusConfig['text-color'] == undefined) ? 'white' : StatusConfig['text-color'];
 
 	var IsOnline = server.online;
 	
