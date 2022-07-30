@@ -40,5 +40,5 @@ function copyText(text){
   }
   
   function mouseOut() {
-      document.getElementById("copyButton").innerHTML = Config['server-ip'];
+      document.getElementById("copyButton").innerHTML = Config['server-ip'] + "<div class='server-status-checker'><img src=''><span>0 / 0  Checking status...</span></div>";
   }
