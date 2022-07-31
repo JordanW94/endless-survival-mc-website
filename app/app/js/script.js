@@ -46,7 +46,7 @@ function copyText(text){
   document.getElementById("copyButton").onmouseout = function() {mouseOut()};
   
   function mouseOver() {
-      document.getElementById("copyButton").innerHTML = "Copy IP";
+      document.getElementById("copyButton").innerHTML = "Copy IP<br/>" + Config['server-ip'];
   }
   
   function mouseOut() {
