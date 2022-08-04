@@ -3,7 +3,7 @@ const Config = {
 
 'server-logo': 'assets/img/logo.png',
 
-'server-ip': 'endlesssurvival.uk',
+'server-ip': 'play.endlesssurvival.uk',
 
 'server-status': {
 	'background-color': '#fff659',
