@@ -1,0 +1,10 @@
+version: "3"
+services:
+  endlesssurvival:
+    user: root
+    build: .
+    container_name: local-endlesssurvival
+    privileged: true
+    restart: unless-stopped
+    ports:
+      - 80:80

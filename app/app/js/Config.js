@@ -3,17 +3,15 @@ const Config = {
 
 'server-logo': 'assets/img/logo.png',
 
-'server-ip': 'rexcraftia.com',
+'server-ip': 'play.endlesssurvival.uk',
 
 'server-status': {
 	'background-color': '#fff659',
-	'text-color': 'black',
+	'text-color': 'white',
 	'icon': 'assets/logo.ico',
-
-	'value': '{online} / {max} players connected!',
+	'value': '{online} / {max} players online!',
 	'copy-value': 'IP COPIED!'
 },
-
 
 'background': {
 	'type': 'image', // TYPES: IMAGE OR COLOR
@@ -43,10 +41,7 @@ const Config = {
 		icon: 'assets/img/bans.png',
 		url: 'https://bans.myweb.net'
 	}
-}
-
-
-
+},
 
 /* END CONFIG */
 };

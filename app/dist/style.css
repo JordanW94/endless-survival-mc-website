@@ -128,10 +128,116 @@ button:hover {
           filter: drop-shadow(1px 1px 1px #154b03);
 }
 
+.staff-list {
+  display: flex;
+  flex-direction: row;
+  column-gap: 200px;
+}
+
+.staff-owner {
+  display: flex;
+  flex-direction: column;
+}
+
+.staff-admin {
+  display: flex;
+  flex-direction: column;
+}
+
+.staff-mod {
+  display: flex;
+  flex-direction: column;
+}
+
+.staff-title {
+  font-size: 30px
+}
+
+.player-images-names {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+
+.player-content {
+  display: flex;
+  flex-direction: column;
+  column-gap: 50px;
+  font-size: 10px;
+}
+
+.player-content > img {
+  height: 50%;
+}
+
+.owner {
+  color: gold;
+  max-width: 100%;
+}
+
+.admin {
+  color: red
+}
+
+.mod {
+  color: green
+}
+
 @media screen and (max-width: 800px) {
+  html {
+    overflow: scroll;
+  }
+
   .buttons {
     width: 80px;
   }
+
+  .staff-list {
+    display: flex;
+    flex-direction: column;
+    column-gap: 200px;
+  }
+
+  .staff-owner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .staff-admin {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .staff-mod {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .staff-title {
+    font-size: 30px;
+    max-width: 100%;
+  }
+
+  .player-images-names {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .player-content {
+    display: flex;
+    flex-direction: column;
+    column-gap: 50px;
+    font-size: 10px;
+    align-items: center;
+  }
+
+  .player-content > img {
+    width: 50%;
+  }
+
 }
 
 /* Config */

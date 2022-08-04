@@ -5,6 +5,8 @@ const ServerStatus = function(andress, port) {
 		Global.variables = {},
 		Global.variables.api_url = "https://api.mcsrvstat.us/2/",
 		Global.variables.server_resolved = undefined;
+	
+	console.log("Checking Server Status")
 
 
 	if (andress == undefined) return console.error("[ServerStatus] Enter Server Andress.");
